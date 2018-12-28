@@ -15,7 +15,7 @@ const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
 
 class CountDown extends React.Component {
   static propTypes = {
-    digitStyle: ProptTypes.object,
+    digitStyle: PropTypes.object,
     digitTextStyle: PropTypes.object,
     labelTextStyle: PropTypes.object,
     timeToShow: PropTypes.array,
