@@ -159,16 +159,12 @@ class CountDown extends React.Component {
 }
 
 CountDown.defaultProps = {
-  digitBgColor: DEFAULT_BG_COLOR,
-  digitTxtColor: DEFAULT_DIGIT_TXT_COLOR,
-  timeTxtColor: DEFAULT_TIME_TXT_COLOR,
   timeToShow: DEFAULT_TIME_TO_SHOW,
   labelD: "Days",
   labelH: "Hours",
   labelM: "Minutes",
   labelS: "Seconds",
   until: 0,
-  size: 15,
 };
 
 const styles = StyleSheet.create({
@@ -177,9 +173,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   timeTxt: {
-    color: 'white',
+    fontSize: 10,
     marginVertical: 2,
-    backgroundColor: 'transparent',
   },
   timeInnerCont: {
     flexDirection: 'row',
