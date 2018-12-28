@@ -11,9 +11,6 @@ import {
 import _ from 'lodash';
 import {sprintf} from 'sprintf-js';
 
-const DEFAULT_BG_COLOR = '#FAB913';
-const DEFAULT_TIME_TXT_COLOR = '#000';
-const DEFAULT_DIGIT_TXT_COLOR = '#000';
 const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
 
 class CountDown extends React.Component {
