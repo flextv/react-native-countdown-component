@@ -18,9 +18,9 @@ const DEFAULT_TIME_TO_SHOW = ['D', 'H', 'M', 'S'];
 
 class CountDown extends React.Component {
   static propTypes = {
-    digitBgColor: PropTypes.string,
-    digitTxtColor: PropTypes.string,
-    timeTxtColor: PropTypes.string,
+    digitStyle: ProptTypes.object,
+    digitTextStyle: PropTypes.object,
+    labelTextStyle: PropTypes.object,
     timeToShow: PropTypes.array,
     size: PropTypes.number,
     until: PropTypes.number,
@@ -95,17 +95,15 @@ class CountDown extends React.Component {
   };
 
   renderDigit = (d) => {
-    const {digitBgColor, digitTxtColor, size} = this.props;
+    const {digitStyle, digitTextStyle} = this.props;
     return (
       <View style={[
         styles.digitCont,
-        {backgroundColor: digitBgColor},
-        {width: size * 2.3, height: size * 2.6},
+        digitStyle,
       ]}>
         <Text style={[
           styles.digitTxt,
-          {fontSize: size},
-          {color: digitTxtColor}
+          digitTextStyle,
         ]}>
           {d}
         </Text>
@@ -114,7 +112,7 @@ class CountDown extends React.Component {
   };
 
   renderDoubleDigits = (label, digits) => {
-    const {timeTxtColor, size} = this.props;
+    const {labelTextStyle} = this.props;
 
     return (
       <View style={styles.doubleDigitCont}>
@@ -123,8 +121,7 @@ class CountDown extends React.Component {
         </View>
         <Text style={[
           styles.timeTxt,
-          {fontSize: size / 1.8},
-          {color: timeTxtColor},
+          labelTextStyle,     
         ]}>
           {label}
         </Text>
@@ -200,7 +197,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   digitTxt: {
-    color: 'white',
+    fontSize: 25,
     fontWeight: 'bold',
     fontVariant: ['tabular-nums']
   },
